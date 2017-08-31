@@ -1,11 +1,6 @@
 import React from 'react';
 
 const VideoListItem = ({video, onVideoSelect}) => {
-	// ES6 refacturing is the same as below:
-	// const VideoListItem = (props) => {
-	// 		const video = props.video;
-    //      const onVideoSelect = props.onVideoSelect;
-	// }
 	const imageUrl = video.snippet.thumbnails.default.url;
 
     return (

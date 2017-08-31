@@ -7,20 +7,16 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyAyEhg41STgz3gFlaSzIrAunGOag47DIGE';
 
-//Creat a new component. This component should produce some HTML
-
 class App extends Component {
 	constructor(props){
 		super(props);
-
 		this.state = { 
 			videos: [],
 			selectedVideo: null 
 		};
-
 		this.videoSearch('surfboards');
 	}
-
+	//kicks of search, sets initial state
 	videoSearch(term) {
 		YTSearch({key: API_KEY, term: term}, videos => {
 			this.setState({ 
@@ -29,10 +25,10 @@ class App extends Component {
 			});
 		});
 	}
-
+	
 	render() {
+		//throttles the callback to every 300ms
 		const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
-
 		return (
 		  <div>
 		  	<SearchBar onSearchTermChange={videoSearch} />
@@ -45,5 +41,4 @@ class App extends Component {
 	}
 }
 
-//Take this component's generated HTML and put it on the page (in the DOM)
 ReactDOM.render(<App />, document.querySelector('.container'));

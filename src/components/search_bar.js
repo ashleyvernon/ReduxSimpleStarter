@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = { term: '' };
 	}
 
@@ -12,6 +11,7 @@ class SearchBar extends Component {
 			<div className="search-bar">
 				<input
 					value={this.state.term}
+					//changes input content to new input value
 					onChange={event => this.onInputChange(event.target.value)} />
 			</div>
 		);
@@ -19,6 +19,7 @@ class SearchBar extends Component {
 
 	onInputChange(term) {
 		this.setState({term});
+		//fires callback onSearchTermChange 
 		this.props.onSearchTermChange(term);
 	}
 

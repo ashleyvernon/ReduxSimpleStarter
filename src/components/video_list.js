@@ -3,7 +3,7 @@ import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
 	const videoItems = props.videos.map((video) => {
-		//video={video} is setting property video
+		//property being passed from App
 		return (
 			<VideoListItem 
 				onVideoSelect={props.onVideoSelect}

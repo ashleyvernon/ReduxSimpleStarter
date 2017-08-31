@@ -1,19 +1,12 @@
 import React from 'react';
 
 const VideoDetail = ({video}) => {
-	// ES6 refacturing is the same as below:
-	// const VideoListItem = (props) => {
-	// 		const video = props.video;
-	// }
-
 	if (!video) {
 		return <div>Loading...</div>;
 	}
 
 	const videoId = video.id.videoId;
-	//refactured same as below using backticks
 	const url = `https://www.youtube.com/embed/${videoId}`;
-	// const url = 'https://www.youtube.com/embed/' + videoId;
 
     return (
         <div className="video-detail col-md-8">
